@@ -1,14 +1,16 @@
 <mvc:View
     controllerName="sap.ui.demo/walkthrough.controller.App"
     xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
-    <Button text="Hello Bianca" press=".onShowHello"/>
+    xmlns:mvc="sap.ui.core.mvc"> 
+
+    <!-- Instead of simply writing our desired text inside we reference to the i18n file where the variables are set with our teaxt-->
+    <Button text="{i18n>showHelloButtonText}" press=".onShowHello"/>
     <Input 
         value="{/recipient/name}"
-        description="Hello {/recipient/name}"
+        description="Good bye {/recipient/name}"
         valueLiveUpdate="true"
         width="60%"/>
-        
+
 </mvc:View>
 
   <!-- the controls defined, where it is placed is decided in JS file-->
