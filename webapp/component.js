@@ -1,3 +1,7 @@
+//  encapsulate all UI assets in a component that is independent from our index.html file.
+//  Components are independent and reusable parts used in SAPUI5 applications.
+
+
 sap.ui.define([
     "sap/ui/core/UIComponent",
     "sap/ui/model/json/JSONModel",
