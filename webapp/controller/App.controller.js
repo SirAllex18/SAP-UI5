@@ -9,6 +9,12 @@ sap.ui.define([
     "use strict"; // helps detect coding issues, keeps things organised
 
     return Controller.extend("sap.ui.demo.walkthrough.App", {
+    
+
+
+/*
+ WE MOVED THIS PART TO THE COMPONENT.JS FILE which will hold these structures 
+STEP 9
 
         onInit: function () {
             // set the data model on the view
@@ -17,7 +23,7 @@ sap.ui.define([
                     name: ""
                 }
             };
-            let oModel = new JSONModel(oData); // instance  of an class
+            let oModel = new JSONModel(oData); // instance  of a class
             this.getView().setModel(oModel); // Question Mark these 2
 
             // Set i18n on view
@@ -30,7 +36,7 @@ sap.ui.define([
             this.getView().setModel(i18nModel, "i18n")
         },
 
-
+*/
         onShowHello: function () {
             // read message from i18n model
             
