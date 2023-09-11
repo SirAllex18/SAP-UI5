@@ -1,16 +1,40 @@
 <mvc:View
     controllerName="sap.ui.demo/walkthrough.controller.App"
     xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc"> 
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock= "true"> 
 
     <!-- Instead of simply writing our desired text inside we reference to the i18n file where the variables are set with our teaxt-->
-    <Button text="{i18n>showHelloButtonText}" press=".onShowHello"/>
-    <Input 
-        value="{/recipient/name}"
-        description="Good bye {/recipient/name}"
-        valueLiveUpdate="true"
-        width="60%"/>
 
+    <Shell>
+    <App class="myAppDemoWT">
+      <pages>
+      <Page title="{i18n>homePageTitle}">
+        <content>
+        <Panel headerText="{i18n>helloPanelTitle}"
+                class="sapUiResponsiveMargins"
+                width="auto">
+          <content>
+               <Button text="{i18n>showHelloButtonText}"
+                       press=".onShowHello"
+                       class="myCustomButton"/>
+
+               <Input value="{/recipient/name}"
+                      description="Good bye {/recipient/name}"
+                      valueLiveUpdate="true"
+                      width="60%"/>
+               <FormattedText
+                  htmlText="Hello {/recipient/name}"
+                  class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
+          </content>
+
+        </Panel>
+        </content>
+
+      </Page>
+      </pages>
+    </App>
+    </Shell>
 </mvc:View>
 
   <!-- the controls defined, where it is placed is decided in JS file-->
