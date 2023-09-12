@@ -36,7 +36,8 @@ STEP 9
             this.getView().setModel(i18nModel, "i18n")
         },
 
-*/
+**** CREATED A NEW VIEW FOR THE PANEL THUS = > this part moved to its own view controller ****
+
         onShowHello: function () {
             // read message from i18n model
             
@@ -50,6 +51,7 @@ STEP 9
             // it represents the text from the box that appears at the end of the page
             MessageToast.show(sMsg) 
         }
+*/
     });
 
 });
