@@ -9,6 +9,10 @@ sap.ui.define([
     "use strict"; // helps detect coding issues, keeps things organised
 
     return Controller.extend("sap.ui.demo.walkthrough.App", {
+
+        onOpenDialog : function(){
+            this.getOwnerComponent().openHelloDialog();  
+        }
     
 
 
