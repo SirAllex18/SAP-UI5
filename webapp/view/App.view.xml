@@ -4,13 +4,18 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock= "true"> 
 
-    <!-- Instead of simply writing our desired text inside we reference to the i18n file where the variables are set with our teaxt-->
 
     <Shell>
     <App class="myAppDemoWT">
       <pages>
       <Page title="{i18n>homePageTitle}">
         <content>
+          <mvc:XMLView
+            viewName="sap.ui.demo.walkthrough.view.HelloPanel"/>
+
+ <!-- Nested views - > moved the panel to it`s own view + own controller 
+                       For better code structure
+            
         <Panel headerText="{i18n>helloPanelTitle}"
                 class="sapUiResponsiveMargins"
                 width="auto">
@@ -27,8 +32,8 @@
                   htmlText="Hello {/recipient/name}"
                   class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
           </content>
-
-        </Panel>
+-->
+        
         </content>
 
       </Page>
