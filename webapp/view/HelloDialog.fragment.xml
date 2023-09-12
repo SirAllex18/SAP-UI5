@@ -5,8 +5,15 @@
     xmlns:core= "sap.ui.core">
     <Dialog
         id="helloDialog"
-        title="Hello {/recipient/name}">
-        <!-- Intoduce a button in the Dialog box -->
+        title="Hogwarts {/recipient/name}">
+        <content>
+            <core:Icon
+                src="sap-icon://hello-world"
+                size="8rem"
+                class="sapUiMediumMargin"/>
+
+        </content>
+        <!-- Introducw a button in the Dialog box -->
         <beginButton>
             <Button
                 text="{i18n>dialogCloseButtonText}"

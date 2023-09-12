@@ -8,11 +8,19 @@
     <Shell>
     <App class="myAppDemoWT">
       <pages>
-      <Page title="{i18n>homePageTitle}">
-        <content>
-          <mvc:XMLView
-            viewName="sap.ui.demo.walkthrough.view.HelloPanel"/>
-
+        <Page title="{i18n>homePageTitle}">
+        <headerContent>
+            <Button
+              icon="sap-icon://hello-world"
+              press=".onOpenDialog"/>
+        </headerContent>
+          <content>
+            <mvc:XMLView
+              viewName="sap.ui.demo.walkthrough.view.HelloPanel"/>
+            
+            <mvc:XMLView
+              viewName="sap.ui.demo.walkthrough.view.InvoiceList"/>
+              
  <!-- Nested views - > moved the panel to it`s own view + own controller 
                        For better code structure
             
@@ -34,9 +42,9 @@
           </content>
 -->
         
-        </content>
+          </content>
 
-      </Page>
+        </Page>
       </pages>
     </App>
     </Shell>

@@ -20,7 +20,12 @@ sap.ui.define([
         },
 
         onOpenDialog : function (){
-            let oView = this.getView();
+
+            this.getOwnerComponent().openHelloDialog();
+  /*    We added all of this to the Dialog.js file so we dont have to rewrite all of this we we desire
+        to reuse a dialog 
+
+          let oView = this.getView();
 
             // Create the dialog lazily
 
@@ -49,6 +54,7 @@ sap.ui.define([
         onCloseDialog : function () {
             this.byId("helloDialog").close(); // 
         }
-
+*/
+        }
     })
 });

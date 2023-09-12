@@ -1,13 +1,13 @@
 //  encapsulate all UI assets in a component that is independent from our index.html file.
 //  Components are independent and reusable parts used in SAPUI5 applications.
 
-
 sap.ui.define([
     "sap/ui/core/UIComponent",
     "sap/ui/model/json/JSONModel",
-    "sap/ui/model/resource/ResourceModel"
+    "sap/ui/model/resource/ResourceModel",
+    "./controller/HelloDialog"
 
-], function(UIComponent, JSONModel, ResourceModel){
+], function(UIComponent, JSONModel, ResourceModel, HelloDialog){
     "use strict";
     
     return UIComponent.extend("sap.ui.walkthrough.Component",{
@@ -42,6 +42,10 @@ sap.ui.define([
             let oModel = new JSONModel(oData); 
             this.setModel(oModel); // dont need getView() - > setModel directly
 
+            // set dialog
+
+            this._helloDialog = new HelloDialog(this.getRootControl()); // _ naming convention for private methods
+
             // set i18n model
 
             /* we added into the manifest file so we no longer need it here 
@@ -52,6 +56,15 @@ sap.ui.define([
             });
             this.setModel(i18nModel, "i18n")
             */
+        },
+
+        exit : function() {
+            this._helloDialog.destroy();
+            delete this._helloDialog;
+        },
+
+        openHelloDialog : function() {
+            this._helloDialog.open();
         }
     });
 });
