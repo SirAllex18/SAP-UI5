@@ -1,0 +1,14 @@
+<mvc:View
+    xmlns= "sap.m"
+    xmlns:mvc = "sap.ui.core.mvc">
+        <List
+            headerText="{i18n>invoiceListTitle}"
+            class="sapUiResponsiveMargin"
+            width="auto"
+            items="{invoice>/Invoices}"> <!--The first invoice is the one we created in the manifest folder, Invoices refer to the invoices.json file-->
+            <items>
+                <ObjectListItem
+                    title="{invoice>Quantity} x {invoice>ProductName}" />
+            </items>
+        </List>
+</mvc:View>
