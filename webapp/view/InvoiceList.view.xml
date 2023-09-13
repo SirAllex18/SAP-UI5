@@ -1,14 +1,55 @@
 <mvc:View
+controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
     xmlns= "sap.m"
     xmlns:mvc = "sap.ui.core.mvc">
         <List
+            id= "invoiceList"
             headerText="{i18n>invoiceListTitle}"
             class="sapUiResponsiveMargin"
             width="auto"
-            items="{invoice>/Invoices}"> <!--The first invoice is the one we created in the manifest folder, Invoices refer to the invoices.json file-->
+            items="{
+                path: 'invoice>/Invoices',
+                sorter:{
+                    path: 'ShipperName',
+                    group: true
+                }
+                
+            }">
+            <!-- The first invoice is the one we created in the manifest folder, Invoices refer to the invoice.json file-->
+            <!--FILTER BAR -->
+            <headerToolbar>
+                <Toolbar>
+                    <Title text="{i18n>invoiceListTitle}"/>
+                    <ToolbarSpacer/>
+                    <SearchField width="50%" search=".onFilterInvoices"/>
+                </Toolbar>
+            </headerToolbar>
             <items>
                 <ObjectListItem
-                    title="{invoice>Quantity} x {invoice>ProductName}" />
+                    title="{invoice>Quantity} x {invoice>ProductName}"
+                    number="{
+                        parts:  [{path: 'invoice>ExtendedPrice'}, {path: 'view>/currency'}],
+                        type: 'sap.ui.model.type.Currency',
+                        formatOptions: {
+                            showMeasure: false
+                        }
+                        
+                    }"
+                   
+                    numberUnit="{view>/currency}"  
+                    numberState= "{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}" >
+                    <firstStatus>
+                        <ObjectStatus text="{
+                            path: 'invoice>Status',
+                            formatter: '.formatter.statusText'
+                        }"/>
+                    </firstStatus>
+                    </ObjectListItem>
+                    <!--view is the alias that we created in invoicelist js
+                        numberState is an ***Expression Binding*** example with logic inserted in the view-->
+
+                    <!--invoice>Status : from the Invoice.json file we take the Status property value
+                        formatter: we have the formatter js file and get the statusText method -->
             </items>
         </List>
 </mvc:View>
