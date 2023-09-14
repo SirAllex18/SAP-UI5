@@ -43,8 +43,13 @@ sap.ui.define([
             this.setModel(oModel); // dont need getView() - > setModel directly
 
             // set dialog
-
             this._helloDialog = new HelloDialog(this.getRootControl()); // _ naming convention for private methods
+
+            // create the view based on the url / hash
+            this.getRouter().initialize();
+            
+
+
 
             // set i18n model
 

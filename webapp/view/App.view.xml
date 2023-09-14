@@ -5,8 +5,12 @@
     displayBlock= "true"> 
 
 
-    <Shell>
-    <App class="myAppDemoWT">
+  <Shell>
+    <App class="myAppDemoWT" id="app"/>
+  </Shell>
+</mvc:View>
+
+    <!--Moved this to OverView.view for routing example
       <pages>
         <Page title="{i18n>homePageTitle}">
         <headerContent>
@@ -20,7 +24,7 @@
             
             <mvc:XMLView
               viewName="sap.ui.demo.walkthrough.view.InvoiceList"/>
-              
+    -->          
  <!-- Nested views - > moved the panel to it`s own view + own controller 
                        For better code structure
             
@@ -40,14 +44,13 @@
                   htmlText="Hello {/recipient/name}"
                   class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
           </content>
--->
+
         
           </content>
 
         </Page>
       </pages>
-    </App>
-    </Shell>
-</mvc:View>
+  -->
+
 
   <!-- the controls defined, where it is placed is decided in JS file-->

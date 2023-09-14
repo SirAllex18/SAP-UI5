@@ -1,10 +1,11 @@
+// Reusable part for all dialogs.
 sap.ui.define([
     "sap/ui/base/ManagedObject",
     "sap/ui/core/Fragment"
 
 ], function(ManagedObject, Fragment){
 
-    "use strict"
+    "use strict";
 
     return ManagedObject.extend("sap,ui.walkthrough.controller.HelloDialog", {
         constructor : function(oView){

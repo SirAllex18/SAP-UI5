@@ -37,7 +37,12 @@ controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
                     }"
                    
                     numberUnit="{view>/currency}"  
-                    numberState= "{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}" >
+                    numberState= "{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}" 
+                
+                    type="Navigation"  
+                    press="onPress">   <!--Add type and event to the list items *Milk Coffe etc*-->
+
+
                     <firstStatus>
                         <ObjectStatus text="{
                             path: 'invoice>Status',
